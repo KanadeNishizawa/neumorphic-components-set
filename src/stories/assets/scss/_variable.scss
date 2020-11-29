@@ -1,0 +1,34 @@
+/* Color styles */
+$base: #eff1f6;
+$primary: #00c0c0;
+$primary-liner: linear-gradient(
+  119.06deg,
+  #3fdfd6 10.71%,
+  #44d8e1 60.37%,
+  #46dfd6 103.14%
+);
+$primary-liner-sub: inear-gradient(91.58deg, #6bcedc -8.01%, #71e2dc 105.39%);
+$primary-liner-light: linear-gradient(180deg, #dbf2f3 0%, #d2f3f3 100%);
+$text-main: #626a76;
+$text-sub: #838e95;
+$text-emphasis: #59616d;
+$button-gray: #889396;
+$unselected: #b8c1c7;
+$disabled: #adadad;
+$border: #c6d6df;
+$danger: #ed7f93;
+$white: #ffffff;
+$subject-bg: #c8efefcc;
+$filter-gray: #d8deeb4d;
+
+/* Effect styles */
+$shadow-concave: inset 4rem 1rem 2rem #a5bac773,
+  inset 3rem -2rem -2rem #ffffffcc;
+$shadow-base: 10rem 2rem 4rem #a5bac766, 2rem -1rem -1rem #ffffffb3,
+  inset 12rem -6rem -8rem #ffffff73, inset 4rem 2rem 3rem #cbd5df66;
+$shadow-convex: 8rem 3rem 3rem #a5bac78c, 10rem -5rem -5rem #ffffff99;
+$shadow-convex-large: 12rem 5rem 5rem #a5bac773, 10rem -5rem -5rem #ffffffcc;
+$shadow-icon: 3rem 1rem 3rem #43afb640, 2rem -1rem -1rem #ffffff33;
+$primary-shadow-concave: inset 4rem 3rem 3rem #55b3c099;
+$liner-shadow-concave: inset 4rem 3rem 3rem #86e1dc40;
+$blur: blur(10rem);
