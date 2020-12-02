@@ -22,13 +22,16 @@ $subject-bg: #c8efefcc;
 $filter-gray: #d8deeb4d;
 
 /* Effect styles */
-$shadow-concave: inset 4rem 1rem 2rem #a5bac773,
-  inset 3rem -2rem -2rem #ffffffcc;
-$shadow-base: 10rem 2rem 4rem #a5bac766, 2rem -1rem -1rem #ffffffb3,
-  inset 12rem -6rem -8rem #ffffff73, inset 4rem 2rem 3rem #cbd5df66;
-$shadow-convex: 8rem 3rem 3rem #a5bac78c, 10rem -5rem -5rem #ffffff99;
-$shadow-convex-large: 12rem 5rem 5rem #a5bac773, 10rem -5rem -5rem #ffffffcc;
-$shadow-icon: 3rem 1rem 3rem #43afb640, 2rem -1rem -1rem #ffffff33;
-$primary-shadow-concave: inset 4rem 3rem 3rem #55b3c099;
-$liner-shadow-concave: inset 4rem 3rem 3rem #86e1dc40;
-$blur: blur(10rem);
+$shadow-concave: inset 0.1rem 0.2rem 0.4rem #a5bac773,
+  inset -0.2rem -0.2rem 0.3rem #ffffffcc;
+$shadow-base: 0.2rem 0.4rem 0.1rem #a5bac766, -0.1rem -0.1rem 0.2rem #ffffffb3,
+  inset -0.6rem -0.8rem 0.12rem #ffffff73, inset 0.2rem 0.3rem 0.4rem #cbd5df66;
+$shadow-convex: 0.3rem 0.3rem 0.8rem #a5bac78c, -0.5rem -0.5rem 1rem #ffffff99;
+$shadow-convex-hover: 0.2rem 0.2rem 0.4rem #a5bac78c,
+  -0.3rem -0.3rem 0.5rem #ffffff99;
+$shadow-convex-large: 5rem 0.5rem 0.12rem #a5bac773,
+  -0.5rem -5rem 0.1rem #ffffffcc;
+$shadow-icon: 0.1rem 0.3rem 0.3rem #43afb640, -0.1rem -0.1rem 0.2rem #ffffff33;
+$primary-shadow-concave: inset 0.2rem 0.2rem 0.3rem #55b3c099;
+$liner-shadow-concave: inset 0.3rem 0.3rem 0.4rem #86e1dc40;
+$blur: blur(0.1rem);

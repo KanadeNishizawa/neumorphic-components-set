@@ -1,0 +1,26 @@
+@mixin flexible() {
+  display: inline-block;
+}
+@mixin fixed {
+  display: block;
+}
+@mixin button-cursor {
+  user-select: none;
+  cursor: pointer;
+}
+@mixin button-transition {
+  transition: box-shadow 0.15s ease;
+}
+@mixin button-active {
+  color: $white;
+  background: $primary-liner;
+  box-shadow: 0 0 0 #00000000, 0 0 0 #00000000, $primary-shadow-concave;
+}
+@mixin button-unactive {
+  color: $text-main;
+  background: $base;
+  box-shadow: $shadow-convex, inset 0 0 0 #00000000;
+}
+@mixin button-hover {
+  box-shadow: $shadow-convex-hover;
+}
