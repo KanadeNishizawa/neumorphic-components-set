@@ -1,0 +1,58 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import Button from "./Button.vue";
+
+<Meta
+  title="MDX/Button"
+  component={Button}
+  argTypes={{
+    backgroundColor: { control: "color" },
+    size: {
+      control: { type: "select", options: ["small", "large"] },
+    },
+  }}
+/>
+
+<!-- <ArgsTable of={Button} /> -->
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Button },
+  template: `<Button v-bind="$props" />`,
+});
+
+## JsxComponent Docs
+
+Some MDX docs for the `JsxComponent` component.
+
+## Wasshoi
+
+# Wasshoi
+
+<Preview>
+  <Story
+    name="small"
+    args={{
+      label: "Button",
+    }}
+  >
+    >{Template.bind()}
+  </Story>
+  <Story
+    name="large"
+    args={{
+      label: "Button",
+      size: "large",
+    }}
+  >
+    >{Template.bind()}
+  </Story>
+  <Story
+    name="withIcon"
+    args={{
+      label: "Button",
+      icon: true,
+    }}
+  >
+    >{Template.bind()}
+  </Story>
+</Preview>
