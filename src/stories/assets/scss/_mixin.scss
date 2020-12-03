@@ -46,3 +46,15 @@
   display: inline-flex;
   vertical-align: middle;
 }
+
+// Media Queries
+@mixin pc {
+  @media only screen and (min-width: $pc-width) {
+    @content;
+  }
+}
+@mixin tablet-and-pc {
+  @media only screen and (min-width: $sp-width) {
+    @content;
+  }
+}
