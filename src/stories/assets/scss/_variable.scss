@@ -38,6 +38,21 @@ $danger-shadow-concave: inset 0.2rem 0.2rem 0.3rem #c0545999;
 $liner-shadow-concave: inset 0.3rem 0.3rem 0.4rem #86e1dc40;
 $blur: blur(0.1rem);
 
+// padding&margin
+$spacing-0: 0;
+$spacing-1: 0.4rem;
+$spacing-2: 0.8rem;
+$spacing-3: 1.2rem;
+$spacing-4: 1.6rem;
+$spacing-5: 2rem;
+$spacing-6: 2.4rem;
+$spacing-7: 2.8rem;
+$spacing-8: 3.2rem;
+
+// line-height
+$single-line: 135%;
+$multi-line: 140%;
+
 // Media Queries
 $pc-width: 769px;
 $sp-width: 480px;
