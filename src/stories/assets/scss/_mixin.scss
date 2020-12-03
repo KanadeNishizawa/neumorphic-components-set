@@ -1,26 +1,44 @@
+// text
+@mixin text-liner {
+  background: $primary-liner;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// button
+@mixin button-cursor {
+  user-select: none;
+  cursor: pointer;
+}
+@mixin button-transition {
+  transition: box-shadow 0.18s ease;
+}
+@mixin button-active {
+  background: $primary-liner;
+  box-shadow: 0 0 0 #00000000, 0 0 0 #00000000, $primary-shadow-concave;
+}
+@mixin button-unactive {
+  background: $base;
+  box-shadow: $shadow-convex, inset 0 0 0 #00000000;
+}
+@mixin button-hover {
+  box-shadow: $shadow-convex-hover;
+}
+
+// layout
 @mixin flexible() {
   display: inline-block;
 }
 @mixin fixed {
   display: block;
 }
-@mixin button-cursor {
-  user-select: none;
-  cursor: pointer;
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
 }
-@mixin button-transition {
-  transition: box-shadow 0.15s ease;
-}
-@mixin button-active {
-  color: $white;
-  background: $primary-liner;
-  box-shadow: 0 0 0 #00000000, 0 0 0 #00000000, $primary-shadow-concave;
-}
-@mixin button-unactive {
-  color: $text-main;
-  background: $base;
-  box-shadow: $shadow-convex, inset 0 0 0 #00000000;
-}
-@mixin button-hover {
-  box-shadow: $shadow-convex-hover;
+@mixin iconlayout {
+  display: inline-flex;
+  vertical-align: middle;
 }

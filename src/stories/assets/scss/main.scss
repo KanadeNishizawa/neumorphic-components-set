@@ -16,9 +16,13 @@ input,
 button,
 textarea,
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // appearance: none;
   border: none;
   outline: none;
+}
+.material-icons {
+  font-family: Material Icons;
+  @include iconlayout;
 }
