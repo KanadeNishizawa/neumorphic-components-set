@@ -29,6 +29,11 @@
   box-shadow: $shadow-convex-hover;
 }
 
+// border-radius
+@mixin radius-2 {
+  border-radius: 0.8rem;
+}
+
 // layout
 @mixin flexible() {
   display: inline-block;

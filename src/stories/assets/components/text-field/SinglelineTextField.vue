@@ -67,7 +67,7 @@ export default {
     box-shadow: $shadow-concave;
     font-size: 1.4rem;
     @include fixed;
-    @include radius-8;
+    @include radius-2;
     &--form {
       height: 4rem;
     }
