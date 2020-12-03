@@ -84,7 +84,7 @@ export default {
 
 .icon-button {
   position: relative;
-  border-radius: 2em;
+  border-radius: $circle;
   vertical-align: middle;
   @include fixed;
   @include button-cursor;

@@ -69,7 +69,7 @@ export default {
 
 .button {
   position: relative;
-  border-radius: 3em;
+  border-radius: $radius-5;
   color: $text-main;
   font-weight: medium;
   vertical-align: middle;

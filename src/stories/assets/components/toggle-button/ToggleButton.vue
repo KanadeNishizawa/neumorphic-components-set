@@ -52,7 +52,7 @@ input {
   position: relative;
   display: flex;
   padding: 0 0.1rem;
-  border-radius: 2rem;
+  border-radius: $radius-5;
   background-color: $base;
   box-shadow: $shadow-concave, $shadow-convex;
   font-weight: medium;

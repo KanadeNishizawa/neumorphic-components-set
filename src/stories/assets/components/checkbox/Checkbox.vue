@@ -33,7 +33,7 @@ input {
   display: inline-block;
   width: 2.4rem;
   height: 2.4rem;
-  border-radius: 0.8rem 0.8rem;
+  border-radius: $radius-2;
   @include button-unactive;
   @include button-transition;
   @include button-cursor;

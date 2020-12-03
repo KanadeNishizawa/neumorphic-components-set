@@ -38,7 +38,7 @@ export default {
   width: 4rem;
   height: 4rem;
   position: relative;
-  border-radius: 2em;
+  border-radius: $circle;
   vertical-align: middle;
   box-shadow: $liner-shadow-concave;
   background: $primary-liner-light;
