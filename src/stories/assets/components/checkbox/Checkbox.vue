@@ -46,7 +46,7 @@ input {
     @include button-hover;
   }
 }
-input:checked ~ .checkbox {
+input:checked + .checkbox {
   @include button-active;
   span {
     color: $white;

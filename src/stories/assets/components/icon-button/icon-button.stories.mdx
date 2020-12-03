@@ -1,0 +1,74 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import IconButton from "./IconButton.vue";
+
+<Meta
+  title="MDX/IconButton"
+  component={IconButton}
+  argTypes={{
+    backgroundColor: { control: "color" },
+    icon: {
+      control: {
+        type: "select",
+        options: [
+          "edit",
+          "expand_more",
+          "menu",
+          "arrow_back",
+          "more_vert",
+          "delete",
+        ],
+      },
+    },
+    size: {
+      control: { type: "select", options: ["small", "medium", "large"] },
+    },
+    color: {
+      control: { type: "select", options: ["nomal", "danger"] },
+    },
+  }}
+/>
+
+<!-- <ArgsTable of={IconButton} /> -->
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { IconButton },
+  template: `<IconButton v-bind="$props" />`,
+});
+
+## JsxComponent Docs
+
+Some MDX docs for the `JsxComponent` component.
+
+## Wasshoi
+
+# Wasshoi
+
+<Preview>
+  <Story name="small">>{Template.bind()}</Story>
+  <Story
+    name="medium"
+    args={{
+      size: "medium",
+    }}
+  >
+    >{Template.bind()}
+  </Story>
+  <Story
+    name="large"
+    args={{
+      size: "large",
+    }}
+  >
+    >{Template.bind()}
+  </Story>
+  <Story
+    name="danger"
+    args={{
+      size: "large",
+      color: "danger",
+    }}
+  >
+    >{Template.bind()}
+  </Story>
+</Preview>
