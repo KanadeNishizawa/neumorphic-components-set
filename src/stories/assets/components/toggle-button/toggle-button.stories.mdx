@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
+import ToggleButton from "./ToggleButton.vue";
+
+<Meta title="MDX/ToggleButton" component={ToggleButton} />
+
+<!-- <ArgsTable of={ToggleButton} /> -->
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { ToggleButton },
+  template: `<ToggleButton v-bind="$props" />`,
+});
+
+## JsxComponent Docs
+
+Some MDX docs for the `JsxComponent` component.
+
+## Wasshoi
+
+# Wasshoi
+
+<Preview>
+  <Story
+    name="toggle-button"
+    args={{
+      label: "ToggleButton",
+    }}
+  >
+    >{Template.bind()}
+  </Story>
+</Preview>

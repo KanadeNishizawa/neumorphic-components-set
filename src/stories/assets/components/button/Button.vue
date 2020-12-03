@@ -112,7 +112,7 @@ export default {
   &--withicon {
     &::after {
       background: none;
-      -webkit-background-clip: none;
+      background-clip: none;
       -webkit-text-fill-color: inherit;
     }
   }
