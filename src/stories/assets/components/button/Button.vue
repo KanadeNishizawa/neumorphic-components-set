@@ -111,9 +111,7 @@ export default {
   }
   &--withicon {
     &::after {
-      background: none;
-      background-clip: none;
-      -webkit-text-fill-color: inherit;
+      @include void-text-liner;
     }
   }
 }

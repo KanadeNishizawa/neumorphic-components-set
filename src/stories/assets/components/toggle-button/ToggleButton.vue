@@ -79,8 +79,7 @@ input:checked + .toggle-button__button {
   color: $white;
   @include button-cursor;
   &:hover {
-    background-clip: none;
-    -webkit-text-fill-color: inherit;
+    @include void-text-liner;
     color: $white;
   }
 }
