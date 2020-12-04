@@ -2,7 +2,7 @@
   <form action=".">
     <div class="singlline-text-field">
       <label for="text-box" :class="label">Label</label>
-      <input type="text" id="text-box" :class="classes" placeholder="e.g." />
+      <input id="text-box" type="text" :class="classes" placeholder="e.g." />
     </div>
   </form>
 </template>
@@ -66,6 +66,7 @@ export default {
     background: $base;
     box-shadow: $shadow-concave;
     font-size: 1.4rem;
+    line-height: $single-line;
     border-radius: $radius-2;
     @include fixed;
     &--form {
