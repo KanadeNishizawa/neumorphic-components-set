@@ -1,0 +1,30 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable
+} from '@storybook/addon-docs/blocks';
+import ToggleSwitch from './ToggleSwitch.vue';
+
+<Meta title="MDX/ToggleSwitch" component={ToggleSwitch} />
+
+<!-- <ArgsTable of={ToggleSwitch} /> -->
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { ToggleSwitch },
+  template: `<ToggleSwitch v-bind="$props" />`
+});
+
+## JsxComponent Docs
+
+Some MDX docs for the `JsxComponent` component.
+
+## Wasshoi
+
+# Wasshoi
+
+<Preview>
+  <Story name="active">>{Template.bind()}</Story>
+  <Story name="inactive">>{Template.bind()}</Story>
+</Preview>
