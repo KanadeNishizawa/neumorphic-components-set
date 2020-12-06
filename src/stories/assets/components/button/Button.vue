@@ -5,8 +5,8 @@
     :class="[
       classes,
       {
-        active: btnActive,
-      },
+        active: btnActive
+      }
     ]"
     :style="style"
     @click="btnActive = !btnActive"
@@ -16,29 +16,29 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 
 export default {
-  data() {
-    return { btnActive: false };
-  },
-
   props: {
     label: {
       type: String,
-      required: true,
+      required: true
     },
     size: {
       type: String,
-      default: "small",
+      default: 'small',
       validator: function (value) {
-        return ["small", "large"].indexOf(value) !== -1;
-      },
+        return ['small', 'large'].indexOf(value) !== -1;
+      }
     },
     icon: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
+  },
+
+  data() {
+    return { btnActive: false };
   },
 
   computed: {
@@ -46,36 +46,30 @@ export default {
       return {
         button: true,
         [`button--${this.size}`]: true,
-        ["button--withicon"]: this.icon,
+        ['button--withicon']: this.icon
       };
     },
     style() {
       return {
-        backgroundColor: this.backgroundColor,
+        backgroundColor: this.backgroundColor
       };
-    },
-  },
-
-  methods: {
-    onClick() {
-      this.$emit("onClick");
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss">
-@import "../../scss/main.scss";
+@import '../../scss/main.scss';
 
 .button {
   position: relative;
-  border-radius: $radius-5;
+  border-radius: $radius-button;
   color: $text-main;
   font-weight: medium;
   vertical-align: middle;
   @include button-cursor;
   @include button-transition;
-  @include button-unactive;
+  @include button-inactive;
   &:hover {
     @include button-hover;
   }
@@ -92,8 +86,8 @@ export default {
   }
   &--withicon {
     &::after {
-      font-family: "Material Icons";
-      content: "launch";
+      font-family: 'Material Icons';
+      content: 'launch';
       font-size: 100%;
       line-height: 100%;
       @include text-liner;

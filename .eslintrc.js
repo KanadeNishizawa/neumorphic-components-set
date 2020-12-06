@@ -1,6 +1,13 @@
 module.exports = {
-  extends: [
-  'plugin:vue/vue3-recommended', 
-  ],
-
-}
+  extends: ['prettier', 'plugin:vue/vue3-recommended'],
+  rules: {
+    'prettier/prettier': [
+      'warn',
+      {
+        singleQuote: true,
+        semi: true
+      }
+    ]
+  },
+  plugins: ['prettier']
+};

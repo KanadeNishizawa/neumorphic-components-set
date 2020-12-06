@@ -5,8 +5,8 @@
     :class="[
       classes,
       {
-        active: btnActive,
-      },
+        active: btnActive
+      }
     ]"
     @click="btnActive = !btnActive"
   >
@@ -15,72 +15,73 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 
 export default {
-  data() {
-    return { btnActive: false };
-  },
-
   props: {
     icon: {
       type: String,
-      default: "edit",
+      default: 'edit',
       validator: function (value) {
         return (
           [
-            "edit",
-            "expand_more",
-            "menu",
-            "arrow_back",
-            "more_vert",
-            "delete",
+            'edit',
+            'expand_more',
+            'menu',
+            'arrow_back',
+            'more_vert',
+            'delete'
           ].indexOf(value) !== -1
         );
-      },
+      }
     },
     size: {
       type: String,
-      default: "small",
+      default: 'small',
       validator: function (value) {
-        return ["small", "mediun", "large"].indexOf(value) !== -1;
-      },
+        return (
+          ['small', 'mediun', 'large'].indexOf(value) !== -1
+        );
+      }
     },
     color: {
       type: String,
-      default: "nomal",
+      default: 'nomal',
       validator: function (value) {
-        return ["nomal", "danger"].indexOf(value) !== -1;
-      },
-    },
+        return ['nomal', 'danger'].indexOf(value) !== -1;
+      }
+    }
+  },
+  data() {
+    return { btnActive: false };
   },
 
   computed: {
     classes() {
       return {
-        "icon-button": true,
-        "material-icons": true,
+        'icon-button': true,
+        'material-icons': true,
         [`icon-button--${this.size}`]: true,
-        [`icon-button--${this.color}`]: true,
+        [`icon-button--${this.color}`]: true
       };
     },
     style() {
       return {
-        backgroundColor: this.backgroundColor,
+        backgroundColor: this.backgroundColor
       };
-    },
+    }
   },
 
   methods: {
     onClick() {
-      this.$emit("onClick");
-    },
-  },
+      this.$emit('onClick');
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../../scss/main.scss";
+@import '../../scss/main.scss';
 
 .icon-button {
   position: relative;
@@ -89,7 +90,7 @@ export default {
   @include fixed;
   @include button-cursor;
   @include button-transition;
-  @include button-unactive;
+  @include button-inactive;
   &:hover {
     @include button-hover;
   }

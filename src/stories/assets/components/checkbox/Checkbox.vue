@@ -1,25 +1,31 @@
 <template>
   <div>
-    <input type="checkbox" id="checkbox" v-model="checked" />
+    <input
+      id="checkbox"
+      v-model="checked"
+      type="checkbox"
+    />
     <label class="checkbox" for="checkbox">
-      <span class="checkbox__checkmark material-icons">check</span>
+      <span class="checkbox__checkmark material-icons"
+        >check</span
+      >
     </label>
   </div>
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 
 export default {
-  name: "Checkbox",
+  name: 'Checkbox',
   data() {
-    return { checkbox: "", name: "", checked: false };
-  },
+    return { checkbox: '', name: '', checked: false };
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../../scss/main.scss";
+@import '../../scss/main.scss';
 
 label {
   display: inline-block;
@@ -34,7 +40,7 @@ input {
   width: 2.4rem;
   height: 2.4rem;
   border-radius: $radius-2;
-  @include button-unactive;
+  @include button-inactive;
   @include button-transition;
   @include button-cursor;
   &__checkmark {

@@ -2,42 +2,50 @@
   <div>
     <div class="toggle-button">
       <input
-        type="radio"
         id="left"
+        v-model="isSelected"
+        type="radio"
         name="toggle"
         value="A"
-        v-model="isSelected"
       />
-      <label for="left" class="toggle-button__button">A</label>
+      <label for="left" class="toggle-button__button"
+        >A</label
+      >
       <input
-        type="radio"
         id="right"
+        v-model="isSelected"
+        type="radio"
         name="toggle"
         value="B"
-        v-model="isSelected"
       />
-      <label for="right" class="toggle-button__button">B</label>
+      <label for="right" class="toggle-button__button"
+        >B</label
+      >
     </div>
 
     <ul class="contents">
-      <li v-if="isSelected === 'A'">Content A</li>
-      <li v-else-if="isSelected === 'B'">Content B</li>
+      <li v-if="isSelected === 'A'">
+        Content A
+      </li>
+      <li v-else-if="isSelected === 'B'">
+        Content B
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 
 export default {
   data() {
-    return { isSelected: "A" };
-  },
+    return { isSelected: 'A' };
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../../scss/main.scss";
+@import '../../scss/main.scss';
 .contents {
   display: none;
 }
@@ -52,7 +60,7 @@ input {
   position: relative;
   display: flex;
   padding: 0 0.1rem;
-  border-radius: $radius-5;
+  border-radius: $radius-button;
   background-color: $base;
   box-shadow: $shadow-concave, $shadow-convex;
   font-weight: medium;

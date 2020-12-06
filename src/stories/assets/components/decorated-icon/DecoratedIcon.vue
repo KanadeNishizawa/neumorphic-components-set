@@ -1,38 +1,40 @@
 <template>
   <div id="icon-button" class="container">
-    <span class="container__icon material-icons"> {{ icon }}</span>
+    <span class="container__icon material-icons">
+      {{ icon }}</span
+    >
   </div>
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 
 export default {
   props: {
     icon: {
       type: String,
-      default: "schedule",
+      default: 'schedule',
       validator: function (value) {
         return (
           [
-            "person",
-            "schedule",
-            "room",
-            "category",
-            "search",
-            "get_app",
-            "insert_drive_file",
-            "style",
+            'person',
+            'schedule',
+            'room',
+            'category',
+            'search',
+            'get_app',
+            'insert_drive_file',
+            'style'
           ].indexOf(value) !== -1
         );
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../../scss/main.scss";
+@import '../../scss/main.scss';
 
 .container {
   width: 4rem;
