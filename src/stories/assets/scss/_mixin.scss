@@ -40,17 +40,23 @@
 @mixin button-transition {
   transition: box-shadow 0.18s ease;
 }
-@mixin button-active($negative-shadow-convex: 0 0 0 #00000000) {
+@mixin button-active(
+  $negative-shadow-convex: 0 0 0 #00000000
+) {
   background: $primary-liner;
-  box-shadow: $negative-shadow-convex, $negative-shadow-convex,
-    $primary-shadow-concave;
+  box-shadow: $negative-shadow-convex,
+    $negative-shadow-convex, $shadow-primary-concave;
 }
-@mixin button-active-danger($negative-shadow-convex: 0 0 0 #00000000) {
+@mixin button-active-danger(
+  $negative-shadow-convex: 0 0 0 #00000000
+) {
   background: $danger;
-  box-shadow: $negative-shadow-convex, $negative-shadow-convex,
-    $danger-shadow-concave;
+  box-shadow: $negative-shadow-convex,
+    $negative-shadow-convex, $danger-shadow-concave;
 }
-@mixin button-unactive($negative-shadow-concave: inset 0 0 0 #00000000) {
+@mixin button-inactive(
+  $negative-shadow-concave: inset 0 0 0 #00000000
+) {
   background: $base;
   box-shadow: $shadow-convex, $negative-shadow-concave;
 }
