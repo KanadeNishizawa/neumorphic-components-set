@@ -1,0 +1,37 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable
+} from '@storybook/addon-docs/blocks';
+import RadioButton from './RadioButton.vue';
+
+<Meta title="MDX/RadioButton" component={RadioButton} />
+
+<!-- <ArgsTable of={RadioButton} /> -->
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { RadioButton },
+  template: `<RadioButton
+ v-bind="$props" />`
+});
+
+## JsxComponent Docs
+
+Some MDX docs for the `JsxComponent` component.
+
+## Wasshoi
+
+# Wasshoi
+
+<Preview>
+  <Story
+    name="radio-button"
+    args={{
+      label: 'RadioButton'
+    }}
+  >
+    >{Template.bind()}
+  </Story>
+</Preview>
