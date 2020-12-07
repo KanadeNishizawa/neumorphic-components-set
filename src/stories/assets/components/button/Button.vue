@@ -74,7 +74,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../../scss/main.scss';
 
 .button {
@@ -118,10 +118,13 @@ export default {
     @include flexible;
   }
   &--fill {
-    width: 34.3rem;
+    display: block;
+    width: 100%;
+    max-width: 400px;
   }
   &--half {
-    width: 12.7rem;
+    width: 35%;
+    max-width: 200px;
   }
   &--withicon {
     &::after {

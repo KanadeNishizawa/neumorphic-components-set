@@ -12,28 +12,28 @@
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 
 export default {
   props: {
     labelstate: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   computed: {
     label() {
       return {
-        "multiline-text-field__label": true,
-        [`multiline-text-field__label--${this.labelstate}`]: true,
+        'multiline-text-field__label': true,
+        [`multiline-text-field__label--${this.labelstate}`]: true
       };
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../../scss/main.scss";
+@import '../../scss/main.scss';
 
 form {
   width: 100%;
