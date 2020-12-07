@@ -2,12 +2,7 @@
   <button
     id="button"
     type="button"
-    :class="[
-      classes,
-      {
-        active: btnActive
-      }
-    ]"
+    :class="classes"
     :style="style"
     @click="btnActive = !btnActive"
   >
@@ -26,9 +21,27 @@ export default {
     },
     size: {
       type: String,
-      default: 'small',
+      default: 'medium',
       validator: function (value) {
-        return ['small', 'large'].indexOf(value) !== -1;
+        return (
+          ['small', 'medium', 'large'].indexOf(value) !== -1
+        );
+      }
+    },
+    layout: {
+      type: String,
+      default: 'flexible',
+      validater: function (value) {
+        return (
+          ['flexible', 'fill', 'half'].indexOf(value) !== -1
+        );
+      }
+    },
+    color: {
+      type: String,
+      default: 'base',
+      varidater: function (value) {
+        return ['base', 'primary'];
       }
     },
     icon: {
@@ -46,7 +59,10 @@ export default {
       return {
         button: true,
         [`button--${this.size}`]: true,
-        ['button--withicon']: this.icon
+        [`button--${this.color}`]: true,
+        [`button--${this.layout}`]: true,
+        ['button--withicon']: this.icon,
+        ['button--active']: this.btnActive
       };
     },
     style() {
@@ -64,25 +80,48 @@ export default {
 .button {
   position: relative;
   border-radius: $radius-button;
-  color: $text-main;
   font-weight: medium;
   vertical-align: middle;
+  transition: $transition-box-shadow;
   @include button-cursor;
-  @include button-transition;
   @include button-inactive;
   &:hover {
     @include button-hover;
   }
   &--small {
+    padding: 0 1.6rem;
     font-size: 1.2rem;
-    padding: 1rem 1.6rem;
-    @include flexible;
+    height: 2.8rem;
+    line-height: 2.8rem;
+  }
+  &--medium {
+    padding: 0 3rem;
+    height: 4rem;
+    font-size: 1.4rem;
+    line-height: 4rem;
   }
   &--large {
+    padding: 0 3.6rem;
+    height: 4.6rem;
     font-size: 1.4rem;
-    padding: 1.3rem 3.6rem;
-    width: 100%;
-    @include fixed;
+    line-height: 4.6rem;
+  }
+  &--base {
+    background: $base;
+    color: $text-main;
+  }
+  &--primary {
+    background: $primary-liner-large;
+    color: $white;
+  }
+  &--flexible {
+    @include flexible;
+  }
+  &--fill {
+    width: 34.3rem;
+  }
+  &--half {
+    width: 12.7rem;
   }
   &--withicon {
     &::after {
@@ -94,17 +133,14 @@ export default {
       @include iconlayout;
     }
   }
-}
-.active.button {
-  color: $white;
-  @include button-cursor;
-  @include button-transition;
-  @include button-active;
-  &:hover {
+  &--active {
+    color: $white;
     @include button-active;
-  }
-  &--withicon {
+    &:hover {
+      @include button-active;
+    }
     &::after {
+      color: white;
       @include void-text-liner;
     }
   }

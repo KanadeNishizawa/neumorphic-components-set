@@ -7,7 +7,7 @@ $primary-liner: linear-gradient(
   #44d8e1 60.37%,
   #46dfd6 103.14%
 );
-$primary-liner-large: inear-gradient(
+$primary-liner-large: linear-gradient(
   91.58deg,
   #6bcedc -8.01%,
   #71e2dc 105.39%
@@ -87,6 +87,8 @@ $fit: 100%;
 
 // transition
 $transition-all: all 0.25s ease-in-out;
+$transition-transform: transform 0.25s ease-in-out;
+$transition-box-shadow: box-shadow 0.18s ease;
 
 // Media Queries
 $pc-width: 769rem;
