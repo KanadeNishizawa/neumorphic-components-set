@@ -1,25 +1,31 @@
 <template>
   <div class="radio-button-group">
-    <input
-      id="A"
-      v-model="isSelected"
-      type="radio"
-      name="radio"
-      value="A"
-    />
-    <label for="A" class="radio-button"
-      ><span class="radio-button__inside"
-    /></label>
-    <input
-      id="B"
-      v-model="isSelected"
-      type="radio"
-      name="radio"
-      value="B"
-    />
-    <label for="B" class="radio-button"
-      ><span class="radio-button__inside"
-    /></label>
+    <section>
+      <input
+        id="A"
+        v-model="isSelected"
+        type="radio"
+        name="radio"
+        value="A"
+      />
+      <label for="A" class="radio-button"
+        ><span class="radio-button__inside"
+      /></label>
+      <span>content A</span>
+    </section>
+    <section>
+      <input
+        id="B"
+        v-model="isSelected"
+        type="radio"
+        name="radio"
+        value="B"
+      />
+      <label for="B" class="radio-button"
+        ><span class="radio-button__inside"
+      /></label>
+      <span>content B</span>
+    </section>
   </div>
 </template>
 
@@ -38,6 +44,10 @@ export default {
 .contents {
   display: none;
 }
+section {
+  display: flex;
+  margin-bottom: $spacing-5;
+}
 
 input {
   display: none;
@@ -48,11 +58,14 @@ input {
   width: 2rem;
   height: 2rem;
   position: relative;
-  margin: 2rem;
+  margin-right: 0.8rem;
   border-radius: $circle;
   transition: $transition-all;
   @include button-inactive;
   @include button-cursor;
+  &:hover {
+    @include button-hover;
+  }
   &__inside {
     background: $base;
     box-shadow: $shadow-concave;
