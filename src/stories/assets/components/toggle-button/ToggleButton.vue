@@ -8,7 +8,7 @@
         name="toggle"
         value="A"
       />
-      <label for="left" class="toggle-button__button"
+      <label for="left" class="toggle-button__label--left"
         >A</label
       >
       <input
@@ -18,9 +18,10 @@
         name="toggle"
         value="B"
       />
-      <label for="right" class="toggle-button__button"
-        >B</label
-      >
+      <label for="right" class="toggle-button__label--right"
+        >B
+      </label>
+      <span :class="sliderClasses">{{ isSelected }}</span>
     </div>
 
     <ul class="contents">
@@ -39,7 +40,16 @@ import Vue from 'vue';
 
 export default {
   data() {
-    return { isSelected: 'A' };
+    return { isSelected: 'A', radioItems: ['A', 'B'] };
+  },
+  computed: {
+    sliderClasses() {
+      return {
+        'toggle-button__slider': true,
+        [`toggle-button__slider--right`]:
+          this.isSelected === 'B'
+      };
+    }
   }
 };
 </script>
@@ -55,40 +65,53 @@ input {
 }
 
 .toggle-button {
+  box-sizing: border-box;
   width: 12rem;
-  height: 2.6rem;
+  height: 2.8rem;
   position: relative;
   display: flex;
-  padding: 0 0.1rem;
+  padding: 0.1rem;
   border-radius: $radius-button;
   background-color: $base;
   box-shadow: $shadow-concave, $shadow-convex;
   font-weight: medium;
   border: solid 0.1rem $base;
-  align-items: center;
+  align-items: cener;
   @include button-cursor;
-  &__button {
+  &__label,
+  %label {
+    display: inline-block;
+    position: absolute;
+    width: 6rem;
+    height: 2.4rem;
     text-align: center;
-    color: $button-gray;
+    line-height: 2.4rem;
+    color: $unselected;
+    &--left {
+      @extend %label;
+      left: 0.2rem;
+    }
+    &--right {
+      @extend %label;
+      right: 0.2rem;
+    }
+  }
+  &__slider {
+    position: absolute;
+    left: 0.1rem;
+    text-align: center;
     line-height: 2.4rem;
     width: 6rem;
     height: 2.4rem;
     font-size: 1.2rem;
-    border-radius: 2rem;
-    @include button-transition;
-    &:hover {
-      @include text-liner;
-    }
-  }
-}
-input:checked + .toggle-button__button {
-  background: $primary-liner;
-  box-shadow: $shadow-drop;
-  color: $white;
-  @include button-cursor;
-  &:hover {
-    @include void-text-liner;
+    border-radius: $radius-button;
+    background: $primary-liner;
+    box-shadow: $shadow-drop;
     color: $white;
+    transition: $transition-all;
+    &--right {
+      transform: translateX(5.6rem);
+    }
   }
 }
 </style>
