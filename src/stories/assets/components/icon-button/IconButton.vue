@@ -87,9 +87,9 @@ export default {
   position: relative;
   border-radius: $circle;
   vertical-align: middle;
+  transition: $transition-box-shadow;
   @include fixed;
   @include button-cursor;
-  @include button-transition;
   @include button-inactive;
   &:hover {
     @include button-hover;
@@ -118,8 +118,8 @@ export default {
 }
 .active.icon-button {
   color: $white;
+  transition: $transition-box-shadow;
   @include button-cursor;
-  @include button-transition;
   @include button-active;
   &:hover {
     @include button-active;

@@ -37,9 +37,7 @@
   user-select: none;
   cursor: pointer;
 }
-@mixin button-transition {
-  transition: box-shadow 0.18s ease;
-}
+
 @mixin button-active(
   $negative-shadow-convex: 0 0 0 #00000000
 ) {
@@ -57,7 +55,6 @@
 @mixin button-inactive(
   $negative-shadow-concave: inset 0 0 0 #00000000
 ) {
-  background: $base;
   box-shadow: $shadow-convex, $negative-shadow-concave;
 }
 @mixin button-hover {

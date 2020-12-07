@@ -40,8 +40,8 @@ input {
   width: 2.4rem;
   height: 2.4rem;
   border-radius: $radius-2;
+  transition: $transition-box-shadow;
   @include button-inactive;
-  @include button-transition;
   @include button-cursor;
   &__checkmark {
     color: $unselected;

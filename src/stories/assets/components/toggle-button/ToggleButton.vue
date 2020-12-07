@@ -108,7 +108,7 @@ input {
     background: $primary-liner;
     box-shadow: $shadow-drop;
     color: $white;
-    transition: $transition-all;
+    transition: $transition-transform;
     &--right {
       transform: translateX(5.6rem);
     }
