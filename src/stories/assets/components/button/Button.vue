@@ -15,13 +15,17 @@ import Vue from 'vue';
 
 export default {
   props: {
+    initState: {
+      type: Boolean,
+      default: false
+    },
     label: {
       type: String,
       required: true
     },
     size: {
       type: String,
-      default: 'medium',
+      default: 'large',
       validator: function (value) {
         return (
           ['small', 'medium', 'large'].indexOf(value) !== -1
@@ -52,6 +56,10 @@ export default {
 
   data() {
     return { btnActive: false };
+  },
+
+  mounted: function () {
+    this.btnActive = this.initState;
   },
 
   computed: {

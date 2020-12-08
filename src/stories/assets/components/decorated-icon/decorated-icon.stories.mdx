@@ -1,5 +1,10 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import DecoratedIcon from "./DecoratedIcon.vue";
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable
+} from '@storybook/addon-docs/blocks';
+import DecoratedIcon from './DecoratedIcon.vue';
 
 <Meta
   title="MDX/DecoratedIcon"
@@ -7,19 +12,19 @@ import DecoratedIcon from "./DecoratedIcon.vue";
   argTypes={{
     icon: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "person",
-          "schedule",
-          "room",
-          "category",
-          "search",
-          "get_app",
-          "insert_drive_file",
-          "style",
-        ],
-      },
-    },
+          'person',
+          'schedule',
+          'room',
+          'category',
+          'search',
+          'get_app',
+          'insert_drive_file',
+          'style'
+        ]
+      }
+    }
   }}
 />
 
@@ -28,7 +33,7 @@ import DecoratedIcon from "./DecoratedIcon.vue";
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { DecoratedIcon },
-  template: `<DecoratedIcon v-bind="$props" />`,
+  template: `<DecoratedIcon v-bind="$props" />`
 });
 
 ## JsxComponent Docs
@@ -40,5 +45,17 @@ Some MDX docs for the `JsxComponent` component.
 # Wasshoi
 
 <Preview>
-  <Story name="small">>{Template.bind()}</Story>
+  <Story name="icon-schedule">{Template.bind()}</Story>
+  <Story name="icon-room" args={{ icon: 'room' }}>
+    {Template.bind()}
+  </Story>
+  <Story name="icon-category" args={{ icon: 'category' }}>
+    {Template.bind()}
+  </Story>
+  <Story name="icon-search" args={{ icon: 'search' }}>
+    {Template.bind()}
+  </Story>
+  <Story name="icon-style" args={{ icon: 'style' }}>
+    {Template.bind()}
+  </Story>
 </Preview>
