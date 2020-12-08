@@ -1,48 +1,56 @@
 <template>
-  <form action=".">
-    <div class="singlline-text-field">
-      <label for="text-box" :class="label">Label</label>
-      <input id="text-box" type="text" :class="classes" placeholder="e.g." />
+  <div class="singlline-text-field">
+    <label for="text-box" :class="label">Label</label>
+    <div :class="classes">
+      <input
+        class="singlline-text-field__text"
+        id="text-box"
+        type="text"
+        placeholder="e.g."
+      />
     </div>
-  </form>
+  </div>
 </template>
 
 <script>
-import Vue from "vue";
+import Vue from 'vue';
 
 export default {
   props: {
     labelstate: {
       type: Boolean,
-      default: true,
+      default: true
     },
     type: {
       type: String,
-      default: "form",
+      default: 'form',
       varidater: function (value) {
-        return ["form", "search", "memo"];
-      },
-    },
+        return ['form', 'search', 'memo'];
+      }
+    }
   },
   computed: {
     classes() {
       return {
-        "singlline-text-field__text-box": true,
-        [`singlline-text-field__text-box--${this.type}`]: true,
+        'singlline-text-field__text-box': true,
+        [`singlline-text-field__text-box--${this.type}`]: true
       };
     },
     label() {
       return {
-        "singlline-text-field__label": true,
-        [`singlline-text-field__label--${this.labelstate}`]: true,
+        'singlline-text-field__label': true,
+        [`singlline-text-field__label--${this.labelstate}`]: true
       };
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../../scss/main.scss";
+@import '../../scss/main.scss';
+form {
+  width: 100%;
+}
 
 .singlline-text-field {
   @include fixed;
@@ -59,6 +67,9 @@ export default {
     }
   }
   &__text-box {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
     color: $text-main;
     width: 100%;
     box-sizing: border-box;
@@ -66,18 +77,30 @@ export default {
     background: $base;
     box-shadow: $shadow-concave;
     font-size: 1.4rem;
-    line-height: $single-line;
     border-radius: $radius-2;
-    @include fixed;
     &--form {
       height: 4rem;
     }
     &--search {
-      height: 4rem;
+      height: 3.6rem;
+      &::before {
+        margin: 0 $spacing-1 0 0;
+        font-family: 'Material Icons';
+        content: 'search';
+        color: $button-gray;
+        font-size: 2.2rem;
+        line-height: 100%;
+        @include iconlayout;
+      }
     }
-    &--memo {
-      height: auto;
-    }
+  }
+  &__text {
+    color: $text-main;
+    box-sizing: border-box;
+    background: $base;
+    font-size: 1.4rem;
+    line-height: $single-line;
+    height: 2rem;
   }
 }
 ::placeholder {

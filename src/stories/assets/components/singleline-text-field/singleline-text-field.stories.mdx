@@ -1,17 +1,22 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import SinglelineTextField from "./SinglelineTextField.vue";
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable
+} from '@storybook/addon-docs/blocks';
+import SinglelineTextField from './SinglelineTextField.vue';
 
 <Meta
   title="MDX/SinglelineTextField"
   component={SinglelineTextField}
   argTypes={{
-    backgroundColor: { control: "color" },
+    backgroundColor: { control: 'color' },
     type: {
       control: {
-        type: "select",
-        options: ["form", "search", "memo"],
-      },
-    },
+        type: 'select',
+        options: ['form', 'search']
+      }
+    }
   }}
 />
 
@@ -20,7 +25,7 @@ import SinglelineTextField from "./SinglelineTextField.vue";
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SinglelineTextField },
-  template: `<SinglelineTextField v-bind="$props" />`,
+  template: `<SinglelineTextField v-bind="$props" />`
 });
 
 ## JsxComponent Docs
@@ -36,7 +41,7 @@ Some MDX docs for the `JsxComponent` component.
   <Story
     name="search"
     args={{
-      type: "search",
+      type: 'search'
     }}
   >
     >{Template.bind()}
