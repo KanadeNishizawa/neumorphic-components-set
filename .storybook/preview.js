@@ -24,7 +24,7 @@ const customViewports = {
 export const decorators = [
   () => ({
     template:
-      '<div style="height:100vh;display: flex;justify-content:center; align-items:center;"><story /></div>'
+      '<div style="box-sizing: border-box;margin: auto;padding: 1rem;max-height: 100%; "><story /></div>'
   })
 ];
 
@@ -33,6 +33,7 @@ export const parameters = {
     viewports: customViewports,
     defaultViewport: 'iPhone678SE'
   },
+  viewMode: 'docs',
   actions: { argTypesRegex: '^on[A-Z].*' },
   backgrounds: {
     default: 'base',
