@@ -25,6 +25,8 @@ Some MDX docs for the `JsxComponent` component.
 # Wasshoi
 
 <Preview>
-  <Story name="active">>{Template.bind()}</Story>
-  <Story name="inactive">>{Template.bind()}</Story>
+  <Story name="active">{Template.bind()}</Story>
+  <Story name="inactive" args={{ initState: false }}>
+    {Template.bind()}
+  </Story>
 </Preview>

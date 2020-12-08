@@ -11,7 +11,7 @@
       <label for="A" class="radio-button"
         ><span class="radio-button__inside"
       /></label>
-      <span>content A</span>
+      <p class="label">content A</p>
     </section>
     <section>
       <input
@@ -24,7 +24,7 @@
       <label for="B" class="radio-button"
         ><span class="radio-button__inside"
       /></label>
-      <span>content B</span>
+      <p class="label">content B</p>
     </section>
   </div>
 </template>
@@ -58,7 +58,7 @@ input {
   width: 2rem;
   height: 2rem;
   position: relative;
-  margin-right: 0.8rem;
+  margin-right: $spacing-2;
   border-radius: $circle;
   transition: $transition-all;
   @include button-inactive;
@@ -81,5 +81,8 @@ input:checked + .radio-button {
     background: $white;
     box-shadow: none;
   }
+}
+.label {
+  @include text-main;
 }
 </style>

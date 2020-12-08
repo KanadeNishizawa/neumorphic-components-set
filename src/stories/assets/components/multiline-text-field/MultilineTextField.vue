@@ -1,14 +1,12 @@
 <template>
-  <form action=".">
-    <div class="multiline-text-field">
-      <label for="text-area" :class="label">Label</label>
-      <textarea
-        id="text-area"
-        class="multiline-text-field__text-area"
-        placeholder="e.g."
-      />
-    </div>
-  </form>
+  <div class="multiline-text-field">
+    <label for="text-area" :class="label">Label</label>
+    <textarea
+      id="text-area"
+      class="multiline-text-field__text-area"
+      placeholder="e.g."
+    />
+  </div>
 </template>
 
 <script>

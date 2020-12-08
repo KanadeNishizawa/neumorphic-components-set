@@ -1,5 +1,10 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import Checkbox from "./Checkbox.vue";
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable
+} from '@storybook/addon-docs/blocks';
+import Checkbox from './Checkbox.vue';
 
 <Meta title="MDX/Checkbox" component={Checkbox} />
 
@@ -8,7 +13,7 @@ import Checkbox from "./Checkbox.vue";
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Checkbox },
-  template: `<Checkbox v-bind="$props" />`,
+  template: `<Checkbox v-bind="$props" />`
 });
 
 ## JsxComponent Docs

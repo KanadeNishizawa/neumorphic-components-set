@@ -13,8 +13,18 @@
 import Vue from 'vue';
 
 export default {
+  props: {
+    initState: {
+      type: Boolean,
+      default: true
+    }
+  },
   data() {
     return { isActive: true };
+  },
+
+  mounted: function () {
+    this.isActive = this.initState;
   },
 
   computed: {
