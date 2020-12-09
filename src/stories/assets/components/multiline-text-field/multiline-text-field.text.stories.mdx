@@ -1,24 +1,28 @@
-import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import MultilineTextField from "./MultilineTextField.vue";
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable
+} from '@storybook/addon-docs/blocks';
+import MultilineTextField from './MultilineTextField.vue';
 
-<Meta title="MDX/MultilineTextField" component={MultilineTextField} />
+<Meta
+  title="MDX/MultilineTextField"
+  component={MultilineTextField}
+/>
 
 <!-- <ArgsTable of={MultilineTextField} /> -->
 
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { MultilineTextField },
-  template: `<MultilineTextField v-bind="$props" />`,
+  template: `<MultilineTextField v-bind="$props" />`
 });
 
-## JsxComponent Docs
+# Multi line text field
 
-Some MDX docs for the `JsxComponent` component.
+<br />
 
-## Wasshoi
-
-# Wasshoi
-
-<Preview>
+<Canvas>
   <Story name="memo">>{Template.bind()}</Story>
-</Preview>
+</Canvas>

@@ -2,12 +2,7 @@
   <button
     id="icon-button"
     type="button"
-    :class="[
-      classes,
-      {
-        active: btnActive
-      }
-    ]"
+    :class="classes"
     @click="btnActive = !btnActive"
   >
     {{ icon }}
@@ -19,6 +14,10 @@ import Vue from 'vue';
 
 export default {
   props: {
+    initState: {
+      type: Boolean,
+      default: false
+    },
     icon: {
       type: String,
       default: 'edit',
@@ -37,23 +36,21 @@ export default {
     },
     size: {
       type: String,
-      default: 'small',
+      default: 'large',
       validator: function (value) {
         return (
           ['small', 'mediun', 'large'].indexOf(value) !== -1
         );
       }
-    },
-    color: {
-      type: String,
-      default: 'nomal',
-      validator: function (value) {
-        return ['nomal', 'danger'].indexOf(value) !== -1;
-      }
     }
   },
+
   data() {
     return { btnActive: false };
+  },
+
+  mounted: function () {
+    this.btnActive = this.initState;
   },
 
   computed: {
@@ -62,19 +59,8 @@ export default {
         'icon-button': true,
         'material-icons': true,
         [`icon-button--${this.size}`]: true,
-        [`icon-button--${this.color}`]: true
+        [`icon-button--active`]: this.btnActive
       };
-    },
-    style() {
-      return {
-        backgroundColor: this.backgroundColor
-      };
-    }
-  },
-
-  methods: {
-    onClick() {
-      this.$emit('onClick');
     }
   }
 };
@@ -84,6 +70,7 @@ export default {
 @import '../../scss/main.scss';
 
 .icon-button {
+  color: $button-gray;
   position: relative;
   border-radius: $circle;
   vertical-align: middle;
@@ -109,25 +96,11 @@ export default {
     width: 4rem;
     font-size: 2.4rem;
   }
-  &--nomal {
-    color: $button-gray;
-  }
-  &--danger {
-    color: $danger;
-  }
-}
-.active.icon-button {
-  color: $white;
-  transition: $transition-box-shadow;
-  @include button-cursor;
-  @include button-active;
-  &:hover {
+  &--active {
+    color: $white;
     @include button-active;
-  }
-  &--danger {
-    @include button-active-danger;
     &:hover {
-      @include button-active-danger;
+      @include button-active;
     }
   }
 }

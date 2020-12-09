@@ -9,7 +9,9 @@
     <label :class="boxClasses" for="check-box1">
       <span :class="checkClasses">check</span>
     </label>
-    <p class="label">checked:{{ isChecked }}</p>
+    <p class="label">
+      checked: <span class="bold">{{ isChecked }}</span>
+    </p>
   </div>
 </template>
 
@@ -87,5 +89,8 @@ input {
 }
 .label {
   @include text-main;
+  .bold {
+    font-weight: bold;
+  }
 }
 </style>
