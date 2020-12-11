@@ -70,6 +70,7 @@ export default {
 @import '../../scss/main.scss';
 
 .icon-button {
+  background: $base;
   color: $button-gray;
   position: relative;
   border-radius: $circle;

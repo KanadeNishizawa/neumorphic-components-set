@@ -1,0 +1,397 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable
+} from '@storybook/addon-docs/blocks';
+import MultilineTextField from './components/multiline-text-field/MultilineTextField.vue';
+import SinglelineTextField from './components/singleline-text-field/SinglelineTextField.vue';
+import Button from './components/button/Button.vue';
+import IconButton from './components/icon-button/IconButton.vue';
+import Checkbox from './components/checkbox/Checkbox.vue';
+import RadioButton from './components/radio-button/RadioButton.vue';
+import ToggleSwitch from './components/toggle-switch/ToggleSwitch.vue';
+import ToggleButton from './components/toggle-button/ToggleButton.vue';
+import DecoratedIcon from './components/decorated-icon/DecoratedIcon.vue';
+import Card from './components/card/Card.vue';
+
+<Meta title="Introduction" component={MultilineTextField} />
+
+<!-- <ArgsTable of={MultilineTextField} /> -->
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    MultilineTextField
+  },
+  template: `<MultilineTextField v-bind="$props" />`
+});
+export const Template2 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    Button
+  },
+  template: `<Button v-bind="$props" />`
+});
+export const Template3 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    IconButton
+  },
+  template: `<IconButton v-bind="$props" />`
+});
+export const Template4 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    DecoratedIcon
+  },
+  template: `<DecoratedIcon v-bind="$props" />`
+});
+export const Template5 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    ToggleSwitch
+  },
+  template: `<ToggleSwitch v-bind="$props" />`
+});
+export const Template6 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    ToggleButton
+  },
+  template: `<ToggleButton v-bind="$props" />`
+});
+export const Template7 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    Checkbox
+  },
+  template: `<Checkbox v-bind="$props" />`
+});
+export const Template8 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    RadioButton
+  },
+  template: `<RadioButton v-bind="$props" />`
+});
+export const Template9 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    Card
+  },
+  template: `<Card v-bind="$props" />`
+});
+export const Template10 = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: {
+    SinglelineTextField
+  },
+  template: `<SinglelineTextField v-bind="$props" />`
+});
+
+# Neumorphic component set
+
+<br />
+
+![](https://user-images.githubusercontent.com/48097323/101796527-571cf180-3b4c-11eb-99af-416d26eea9aa.png)
+
+<br />
+
+![](https://user-images.githubusercontent.com/48097323/101796422-3f456d80-3b4c-11eb-9c02-f8e30904815e.jpg)
+
+<br />
+<br />
+
+# Button
+
+<br />
+<br />
+
+## inactive - base
+
+<Canvas>
+  <Story
+    name="button/small"
+    args={{
+      label: 'Button',
+      size: 'small'
+    }}
+  >
+    >{Template2.bind()}
+  </Story>
+  <Story
+    name="button/medium"
+    args={{
+      label: 'Button',
+      size: 'medium'
+    }}
+  >
+    {Template2.bind()}
+  </Story>
+  <Story
+    name="button/large"
+    args={{
+      label: 'Button'
+    }}
+  >
+    >{Template2.bind()}
+  </Story>
+</Canvas>
+
+## inactive - primary
+
+<Canvas>
+  <Story
+    name="button/primary/small"
+    args={{
+      label: 'Button',
+      size: 'small',
+      color: 'primary'
+    }}
+  >
+    {Template2.bind()}
+  </Story>
+  <Story
+    name="button/primary/medium"
+    args={{
+      label: 'Button',
+      size: 'medium',
+      color: 'primary'
+    }}
+  >
+    {Template2.bind()}
+  </Story>
+  <Story
+    name="button/primart/large"
+    args={{
+      label: 'Button',
+      color: 'primary'
+    }}
+  >
+    {Template2.bind()}
+  </Story>
+</Canvas>
+
+## inactive - with icon
+
+<Canvas>
+  <Story
+    name="button/withIcon/small"
+    args={{
+      label: 'Button',
+      size: 'small',
+      icon: true
+    }}
+  >
+    >{Template2.bind()}
+  </Story>
+  <Story
+    name="button/withIcon/medium"
+    args={{
+      label: 'Button',
+      size: 'medium',
+      icon: true
+    }}
+  >
+    >{Template2.bind()}
+  </Story>
+  <Story
+    name="button/withIcon/large"
+    args={{
+      label: 'Button',
+      icon: true
+    }}
+  >
+    >{Template2.bind()}
+  </Story>
+</Canvas>
+
+## active
+
+<Canvas>
+  <Story
+    name="button/active/small"
+    args={{
+      label: 'Button',
+      size: 'small',
+      initState: true
+    }}
+  >
+    >{Template2.bind()}
+  </Story>
+  <Story
+    name="button/active/medium"
+    args={{
+      label: 'Button',
+      size: 'medium',
+      initState: true
+    }}
+  >
+    >{Template2.bind()}
+  </Story>
+  <Story
+    name="button/active/large"
+    args={{
+      label: 'Button',
+      initState: true
+    }}
+  >
+    >{Template2.bind()}
+  </Story>
+</Canvas>
+
+<br />
+<br />
+
+# Icon button
+
+<br />
+
+## inactive
+
+<Canvas>
+  <Story name="icon-button/small" args={{ size: 'small' }}>
+    >{Template3.bind()}
+  </Story>
+  <Story
+    name="icon-button/medium"
+    args={{
+      size: 'medium'
+    }}
+  >
+    >{Template3.bind()}
+  </Story>
+  <Story name="icon-button/large">
+    >{Template3.bind()}
+  </Story>
+</Canvas>
+
+## active
+
+<Canvas>
+  <Story
+    name="icon-button/active/small"
+    args={{ size: 'small', initState: true }}
+  >
+    >{Template3.bind()}
+  </Story>
+  <Story
+    name="icon-button/active/medium"
+    args={{
+      size: 'medium',
+      initState: true
+    }}
+  >
+    >{Template3.bind()}
+  </Story>
+  <Story
+    name="icon-button/active/large"
+    args={{ initState: true }}
+  >
+    >{Template3.bind()}
+  </Story>
+</Canvas>
+
+<br />
+<br />
+
+# single line text field
+
+<Canvas>
+  <Story name="singleline-text-field">
+    {Template10.bind()}
+  </Story>
+</Canvas>
+
+<br />
+<br />
+
+# multi line text field
+
+<Canvas>
+  <Story name="multiline-text-field">
+    {Template.bind()}
+  </Story>
+</Canvas>
+
+<br />
+<br />
+
+# decorated icon
+
+<Canvas>
+  <Story name="decolated-icon">{Template4.bind()}</Story>
+  <Story name="icon-room" args={{ icon: 'room' }}>
+    {Template4.bind()}
+  </Story>
+  <Story name="icon-person" args={{ icon: 'person' }}>
+    {Template4.bind()}
+  </Story>
+  <Story name="icon-category" args={{ icon: 'category' }}>
+    {Template4.bind()}
+  </Story>
+  <Story
+    name="icon-file"
+    args={{ icon: 'insert_drive_file' }}
+  >
+    {Template4.bind()}
+  </Story>
+  <Story name="icon-search" args={{ icon: 'search' }}>
+    {Template4.bind()}
+  </Story>
+  <Story name="icon-get_app" args={{ icon: 'get_app' }}>
+    {Template4.bind()}
+  </Story>
+  <Story name="icon-style" args={{ icon: 'style' }}>
+    {Template4.bind()}
+  </Story>
+</Canvas>
+
+<br />
+<br />
+
+# toggle switch
+
+<Canvas>
+  <Story name="toggle-switch">{Template5.bind()}</Story>
+</Canvas>
+
+<br />
+<br />
+
+# toggle button
+
+<Canvas>
+  <Story name="toggle-button">{Template6.bind()}</Story>
+</Canvas>
+
+<br />
+<br />
+
+# checkbox
+
+<Canvas>
+  <Story name="checkbox">{Template7.bind()}</Story>
+</Canvas>
+
+<br />
+<br />
+
+# radio button
+
+<Canvas>
+  <Story name="radio-button">{Template8.bind()}</Story>
+</Canvas>
+
+<br />
+<br />
+
+# card
+
+<Canvas>
+  <Story name="card">{Template9.bind()}</Story>
+</Canvas>
+
+<br />
+<br />

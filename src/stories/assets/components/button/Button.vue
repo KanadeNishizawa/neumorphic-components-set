@@ -21,7 +21,8 @@ export default {
     },
     label: {
       type: String,
-      required: true
+      required: true,
+      default: 'Button'
     },
     size: {
       type: String,

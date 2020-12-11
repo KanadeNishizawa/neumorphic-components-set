@@ -46,7 +46,7 @@ export default {
 }
 section {
   display: flex;
-  margin-bottom: $spacing-5;
+  margin: $spacing-4 0;
 }
 
 input {
